@@ -1,5 +1,6 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import "@nomicfoundation/hardhat-ethers";
 import * as dotenv from "dotenv";
 
 dotenv.config();
@@ -12,6 +13,9 @@ const PRIVATE_KEY =
 const config: HardhatUserConfig = {
   solidity: "0.8.20",
   networks: {
+    hardhat: {
+      chainId: 31337,
+    },
     sonic: {
       url: "https://rpc.soniclabs.com",
       chainId: 146,
